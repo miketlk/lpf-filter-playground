@@ -1,0 +1,1 @@
+g++ -g main.cpp -I./lib -std=c++2a -o lpf-step.app
