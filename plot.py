@@ -2,17 +2,20 @@ import matplotlib.pyplot as plt
 import csv
 
 x = []
-y = []
+sig_in = []
+sig_out = []
 
-with open('output.csv','r') as csvfile:
+with open('output.csv', 'r') as csvfile:
     plots = csv.reader(csvfile, delimiter=',')
     for i, row in enumerate(plots):
         x.append(i)
-        y.append(float(row[0]))
+        sig_in.append(float(row[0]))
+        sig_out.append(float(row[1]))
 
-plt.plot(x,y, label='Output signal')
-plt.xlabel('x')
-plt.ylabel('y')
+plt.plot(x, sig_in, label='Input signal')
+plt.plot(x, sig_out, label='Output signal')
+plt.xlabel('sample')
+plt.ylabel('value')
 plt.title('Step response of LPF filter')
 plt.legend()
 plt.show()

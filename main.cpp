@@ -23,7 +23,7 @@ int main() {
   // Process and output  data
   f << std::fixed;
   for (auto val : in) {
-    f << lpf.process(val) << "\n";
+    f << val << "," << lpf.process(val) << "\n";
   }
 
   std::cout << "Done!\n";
